@@ -6,11 +6,12 @@
     - name: copy work
       copy:
         src:  /tmp/abc.xml
-        dest: /tmp/abc.xml
+        dest: /tmp/abc1.xml
   
   - name: This play is for copy the file
     hosts:  all
+    become: yes
     tasks:
     - copy:
           src:  /tmp/abc.xml
-          dest: /tmp/abc.xml
+          dest: /tmp/abc2.xml
