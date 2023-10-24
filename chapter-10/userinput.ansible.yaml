@@ -1,0 +1,21 @@
+---
+  - name: this is to get the bash version using set_fact
+    hosts:  all
+    vars_prompt:
+      - name: fname
+        prompt: Enter your first name
+        private:  false
+      - name: lname
+        prompt:  Enter your last name
+        private:  false
+      
+    gather_facts: false
+    tasks:
+    
+    - name: print the complete name
+      debug:
+        msg:  
+          #- "{{bash_ver}}"
+          - "========================================================="
+          - "your name is {{fname}} {{lname}}"
+        

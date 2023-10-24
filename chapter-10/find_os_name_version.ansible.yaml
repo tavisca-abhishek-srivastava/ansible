@@ -1,0 +1,20 @@
+---
+  - name: this play is to find the os details
+    gather_facts: false
+    hosts:  all
+    tasks:
+    - name: this taks is for os distribution
+      shell:  "cat /etc/os-release  | awk -F = 'NR==1 {print $2}' | awk '{print $1}' "
+      register: os_distribution
+      
+    - name: Finding OS name
+      shell:  "uname"
+      register: os_name
+
+    - name: printing using debug
+      debug:
+        msg:
+        - "the OS distribution is {{os_distribution}}"
+        - "OS name is {{os_name}}"
+
+

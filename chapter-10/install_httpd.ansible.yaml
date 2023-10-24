@@ -1,0 +1,11 @@
+---
+  - name:  this play is to install httpd
+   # usages:  ansible-playbook install_httpd.ansible.yaml -e "@my_package.yaml"
+    hosts:  all
+    become: yes
+    gather_facts: false
+    tasks:
+    - name: installing "{{pckg}}"
+      yum:
+        name: "{{pckg}}"
+        state:  "{{req_state}}"

@@ -1,0 +1,16 @@
+---
+  - name: this is to get the bash collection
+    hosts:  all
+    gather_facts: false
+    tasks:
+    - name: get bash version
+      shell:  "bash --version"
+      register: bash_ver
+    
+    - name: print bash version
+      debug:
+        msg:  
+          #- "{{bash_ver}}"
+          #- "========================================================="
+          - "{{bash_ver.stdout_lines[0].split()[3]}}"
+        

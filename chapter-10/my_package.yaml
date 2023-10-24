@@ -1,0 +1,5 @@
+pckg:
+  - "httpd"
+  - "telnet"
+
+req_state:  absent

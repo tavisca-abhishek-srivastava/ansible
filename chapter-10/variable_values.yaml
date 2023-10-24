@@ -1,0 +1,10 @@
+---
+  x: 45
+  y:
+    - 4
+    - 67
+    - "ansible"
+  
+  pkgs:
+    "web":  "httpd"
+    "middleware": "apache2"

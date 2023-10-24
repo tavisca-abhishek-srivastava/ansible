@@ -1,0 +1,19 @@
+---
+  - name: this play is to show different data types
+    hosts:  all
+    gather_facts: false
+    tasks:
+    - name: this is for list or array
+      vars:
+        students: ['Abhishek','Sandeep','Vicky','Ashutosh','Shilu']
+        students_1:
+          - "Abhishek1"
+          - 'Sandeep1'
+          - 'Vicky1'
+          - 'Ashutosh1'
+          - 'Shilu1'
+      debug:
+        #var=students_1
+        msg:
+          - "Students in class nursery: {{students}}"
+          - "Students in class 1st {{students_1}}"

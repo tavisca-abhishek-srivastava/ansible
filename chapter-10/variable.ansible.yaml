@@ -1,0 +1,21 @@
+---
+  - name: this is to get the bash version using set_fact
+    hosts:  all
+    gather_facts: false
+    tasks:
+    - name: get bash version
+      shell:  "bash --version"
+      register: bash_ver
+    
+    - name: this module is to define variable "bash_version"
+      set_fact:
+        bash_version: "{{bash_ver.stdout_lines[0].split()[3]}}"
+
+      
+    - name: print bash version
+      debug:
+        msg:  
+          #- "{{bash_ver}}"
+          - "========================================================="
+          - "{{bash_version}}"
+        

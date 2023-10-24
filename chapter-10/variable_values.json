@@ -1,0 +1,13 @@
+{
+    "a": 5,
+    "name": "Abhishek",
+    "subject": ["Maths","Science","CS"],
+    "Address": {
+        "flat": 802,
+        "building": "c2b",
+        "Society": "Long Island"
+    }
+
+
+
+}

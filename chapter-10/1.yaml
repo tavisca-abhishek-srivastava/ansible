@@ -1,0 +1,20 @@
+---
+  - name: This play is for variable value printing and debug mode
+    hosts:  all
+    gather_facts: false
+    tasks:
+    - name: this task is to print hostname using debug module
+      debug:  
+        msg:  "the hostname is  {{inventory_hostname}}"  
+  
+  - name: this play is to show verbosity of debug module
+    hosts: all
+    gather_facts: false
+    tasks:
+    - name: this task for default verbosity
+      debug:
+        msg:  "this is default verbosity value"
+    - name: this has verbosity value of 2
+      debug:
+        msg: "verbosity is 2"
+        verbosity:  0

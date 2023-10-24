@@ -1,0 +1,10 @@
+---
+  - name: this is to get the bash version using set_fact
+    hosts:  all
+    gather_facts: false
+    tasks:
+    - name: debug module to read values from file
+      debug:
+        var=Address
+
+  

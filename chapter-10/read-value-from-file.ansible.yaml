@@ -1,0 +1,13 @@
+---
+  - name: this is to get the bash version using set_fact
+    hosts:  all
+    gather_facts: false
+    vars_files: 
+      - variable_values.yaml
+      - variable_values.json
+    tasks:
+    - name: debug module to read values from file
+      debug:
+        var=Address
+
+  
