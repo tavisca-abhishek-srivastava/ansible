@@ -1,0 +1,15 @@
+---
+  - hosts:  all
+    gather_facts: false
+    tasks:
+    - name: copy work
+      copy:
+        src:  /tmp/abc.xml
+        dest: /tmp/abc.xml
+  
+  - name: This play is for copy the file
+    hosts:  all
+    tasks:
+    - copy:
+          src:  /tmp/abc.xml
+          dest: /tmp/abc.xml
