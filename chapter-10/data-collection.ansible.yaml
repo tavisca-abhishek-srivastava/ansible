@@ -21,3 +21,6 @@
           - "Students in class nursery: {{students}}"
           - "Students in class 1st {{students_1}}"
           - "webserver and their os {{web_server}}"
+          - "OS list {{web_server.keys()}}"
+          - "webserver for Linux os {{web_server['Linux']}}"
+          - "webserver for Ubuntu os {{web_server.get('ubuntu')}}"
