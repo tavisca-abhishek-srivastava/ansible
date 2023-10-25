@@ -13,7 +13,7 @@
           - 'Ashutosh1'
           - 'Shilu1'
         web_server:
-          "Linuxl": "httpd"
+          "Linux": "httpd"
           "ubuntu": "apacche2"
       debug:
         #var=students_1
