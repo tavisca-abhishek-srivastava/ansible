@@ -17,4 +17,4 @@
     - name: this has verbosity value of 2
       debug:
         msg: "verbosity is 2"
-        verbosity:  0
+        verbosity:  2  # 2nd task will be displayed only if we give -vv while running ansible playbook

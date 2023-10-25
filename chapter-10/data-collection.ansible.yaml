@@ -12,8 +12,12 @@
           - 'Vicky1'
           - 'Ashutosh1'
           - 'Shilu1'
+        web_server:
+          "Linuxl": "httpd"
+          "ubuntu": "apacche2"
       debug:
         #var=students_1
         msg:
           - "Students in class nursery: {{students}}"
           - "Students in class 1st {{students_1}}"
+          - "webserver and their os {{web_server}}"
