@@ -1,7 +1,7 @@
 ---
-  - name: "This taskset will give different system parameters using ansible facts"
+  - name: "This play will give different system parameters using ansible facts"
     hosts: all
-    gather-facts: true
+    gather_facts: true
     tasks:
       - name: This task will get memory and CPU
         debug:  
