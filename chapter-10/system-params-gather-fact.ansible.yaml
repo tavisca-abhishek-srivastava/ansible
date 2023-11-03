@@ -1,11 +1,11 @@
 ---
-  name: "This playbook will give different system parameters using ansible facts"
-  hosts: all
-  gather-facts: true
-  tasks:
-    - name: This task will get memory and CPU
-      debug:  
-        msg: 
-          - "total and free memory {{ansible_memory_mb['real']}}"  
-          - "mount points are : {{ansible_mounts}}"
+  - name: "This taskset will give different system parameters using ansible facts"
+    hosts: all
+    gather-facts: true
+    tasks:
+      - name: This task will get memory and CPU
+        debug:  
+          msg: 
+            - "total and free memory {{ansible_memory_mb['real']}}"  
+            - "mount points are : {{ansible_mounts}}"
 
