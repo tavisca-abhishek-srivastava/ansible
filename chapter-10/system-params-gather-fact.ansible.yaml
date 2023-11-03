@@ -8,5 +8,5 @@
           msg: 
             - "total and free memory {{ansible_memory_mb['real']}}"  
             - "mount points are : {{ansible_mounts}}"
-            - "mount points using hostvars[inventory_hostname] : {{hostvars[inventory_hostname]}}"  #hostvars variable contains the output of gather_facts
+            - "mount points using hostvars[inventory_hostname] : {{hostvars[inventory_hostname]['ansible_mounts']}}"  #hostvars[inventory_hostname] variable contains the output of gather_facts
 
