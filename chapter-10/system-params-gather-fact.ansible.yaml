@@ -8,4 +8,5 @@
           msg: 
             - "total and free memory {{ansible_memory_mb['real']}}"  
             - "mount points are : {{ansible_mounts}}"
+            - "mount point using ansible_facts variable {{ansible_facts['ansible_mounts']}}"
 
