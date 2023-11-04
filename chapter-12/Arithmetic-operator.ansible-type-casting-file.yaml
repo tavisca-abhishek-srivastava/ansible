@@ -1,0 +1,11 @@
+---
+ - name: Practice on Arithmetic Operators
+   hosts: localhost
+   gather_facts: false
+   vars_files:
+    - my_vars.yml
+   tasks:
+   - debug:
+       msg:
+       - "The value of x is: {{x}}"
+       - "The value of y is: {{y}}"
