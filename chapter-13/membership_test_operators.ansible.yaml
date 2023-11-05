@@ -20,5 +20,7 @@
             - "z is undefined {{z is undefined}}"
             - "my {{name}} is lower: {{name is lower}}"
             - "my {{name}} is upper: {{name is upper}}"
+            - "y - {{y}} is divisibleby 2 : {{y is divisibleby 2}} "
+            - "{{name}} is string {{name is string}}"
 
     
