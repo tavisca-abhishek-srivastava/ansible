@@ -6,7 +6,14 @@
       x:  [3,4,5]
       y:  5
       name: "ansible"
+      file_path: "/tmp/file-creation.txt"
     tasks:
+      - name: Creating a file with content
+        copy:
+          dest: "/tmp/file-creation.txt"
+          content: |
+            "Hello Sir how are you"
+            "Today is Sunday"
       - name: this task is to display the logic
         debug:  
           msg:  
@@ -20,7 +27,10 @@
             - "z is undefined {{z is undefined}}"
             - "my {{name}} is lower: {{name is lower}}"
             - "my {{name}} is upper: {{name is upper}}"
-            - "y - {{y}} is divisibleby 2 : {{y is divisibleby 2}} "
+            - "y -> {{y}} is divisibleby 2 : {{y is divisibleby 2}} "
             - "{{name}} is string {{name is string}}"
+            - "y is even {{x is even}}"
+            - "y is odd {{x is odd}}"
+            - "{{file_path}} is a file : {{file_path is file}}"
 
     
