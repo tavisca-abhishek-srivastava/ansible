@@ -29,8 +29,8 @@
             - "my {{name}} is upper: {{name is upper}}"
             - "y -> {{y}} is divisibleby 2 : {{y is divisibleby 2}} "
             - "{{name}} is string {{name is string}}"
-            - "y is even {{x is even}}"
-            - "y is odd {{x is odd}}"
+            - "y is even {{y is even}}"
+            - "x is odd {{y is list}}"
             - "{{file_path}} is a file : {{file_path is file}}"
 
     
