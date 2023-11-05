@@ -12,5 +12,6 @@
           msg:
             - "The value of x is {{x}} and value of y is {{y}} and p list value is {{p}}"
             - "x < y {{x < y}} . y in p {{y in p}}"
+            - "x < y {{x < y}} . y in p {{y not in p}}"
             - "x < y and y in p  {{(x < y) and  (y in p)}}"
             - "x < y or y in p  {{(x < y) or  (y in p)}}"
