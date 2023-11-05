@@ -8,12 +8,12 @@
       name: "ansible"
       file_path: '/tmp/file-creation.txt'
     tasks:
-      - name: Creating a file with content
-        copy:
-          dest: "{{file_path}}"
-          content: |
-            "Hello Sir how are you"
-            "Today is Sunday"
+      # - name: Creating a file with content
+      #   copy:
+      #     dest: "{{file_path}}"
+      #     content: |
+      #       "Hello Sir how are you"
+      #       "Today is Sunday"
       - name: this task is to display the logic
         debug:  
           msg:  
