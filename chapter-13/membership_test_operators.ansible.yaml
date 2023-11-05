@@ -30,7 +30,7 @@
             - "y -> {{y}} is divisibleby 2 : {{y is divisibleby 2}} "
             - "{{name}} is string {{name is string}}"
             - "y is even {{y is even}}"
-            - "x is odd {{x is list}}"
+            - "y is odd {{y is odd}}"
             - "{{file_path}} is a file : {{file_path is file}}"
 
     
