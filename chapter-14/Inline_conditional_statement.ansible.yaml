@@ -8,6 +8,7 @@
     tasks:
       - name: "This task is to get larger number"
         debug:
-          - msg:  "The larger number of {{x}} and {{y}} is {{x if (x>y) else y}}"
+          msg:  
+            - "The larger number of {{x}} and {{y}} is {{x if (x>y) else y}}"
 
     
