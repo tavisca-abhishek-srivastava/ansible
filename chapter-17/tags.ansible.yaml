@@ -1,0 +1,33 @@
+---
+  - name: Play with 5 tasks
+    hosts: localhost
+    gather_facts: false
+    tasks:
+      - debug:
+          msg: "This is a first task"
+        tags:
+          - first # use -t <tag-name1>,<tag-name2>.. when ruuning playbook
+          - common
+          - always # This task will be executed always by default 
+      - debug:
+          msg: "This is a second task"
+        tags:
+          - second
+          - never
+      - debug:
+          msg: "This is a third task"
+        tags:
+          - third
+          - common
+          - never
+      - debug:
+          msg: "This is a fourth task"
+        tags:
+          - fourth
+          - never
+      - debug:
+          msg: "This is a fifth task"
+        tags:
+          - fifth
+          - never   # by default all tasks run if we dont specify any tag. so to override(no tag run in case of no tag provided) 
+                    # this add never tag in all tasks
