@@ -3,7 +3,8 @@
     gather_facts: false
     become: yes
     tasks:
-      - yum:
+      - name: Uninstalling {{item}}
+        yum:
          name: "{{item}}"
          state: absent
         loop:
@@ -12,3 +13,6 @@
           - perl-CPAN
           - perl-devel
           - zlib-devel
+          - git
+          - tomcat
+          - nginx
