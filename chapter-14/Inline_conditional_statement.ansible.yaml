@@ -1,12 +1,12 @@
 ---
-  - name: this play is for inline Inline conditional statement
+  - name: "this play is for inline Inline conditional statement"
     hosts:  all
     gather_facts: false
     vars:
       x:  10
       y:  9
     tasks:
-      - name: This task is to get larger number
+      - name: "This task is to get larger number"
         debug:
           - msg:  "The larger number of {{x}} and {{y}} is {{x if (x>y) else y}}"
 
