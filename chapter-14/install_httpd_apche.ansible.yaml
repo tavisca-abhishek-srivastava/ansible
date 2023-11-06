@@ -1,0 +1,22 @@
+---
+  - name: SImple play to install httpd
+    hosts: all
+    gather_facts: true
+    tasks:
+      - name: "Installing httpd using yum"
+        yum:
+          name: httpd
+          state:  absent #present
+        become: yes
+        register: output
+        when: ansible_distribution != "Ubuntu"
+      
+      - name:  "get distribution"
+        debug:
+          msg:  
+            - "os version is {{ansible_distribution}}"
+
+      - name: print output of httpd installation
+        debug:
+          msg: 
+            - "output is {{output}}"
