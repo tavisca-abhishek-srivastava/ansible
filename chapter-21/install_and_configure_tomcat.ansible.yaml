@@ -37,7 +37,7 @@
           remote_src: yes
 
       - name: "renaming tomcat home"
-        command:  mv "/tmp/apache-tomcat-{{req_tomcat_ver}}" /usr/local/latest
+        command:  mv "/tmp/apache-tomcat-{{req_tomcat_ver}}" "/usr/local/latest//apache-tomcat-{{req_tomcat_ver}}"
 
       - name: "Replacing Default portiwth required port"
         template: 
