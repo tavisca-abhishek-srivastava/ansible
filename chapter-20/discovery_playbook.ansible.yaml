@@ -1,0 +1,36 @@
+---
+  - name: "Discovery playbook"
+    hosts: all
+    gather_facts: true
+    tasks:
+      - name: "Finding OS Name"
+        shell:  "uname"
+        register: os_name
+
+      - name: "Finding uptime"
+        shell:  "uptime"
+        register: up_time
+
+      - name: "Displaying discovered Info"
+        debug:
+          msg:  
+            - "{{inventory_hostname}} , {{ansible_os_family}},{{ansible_system}},{{ansible_distribution}}, {{os_name.stdout}}  {{up_time.stdout.split(',')[0].split('up')[1]}}"
+            - "OS Name : {{os_name.stdout}}"
+
+      - name: "Removing old discovery.csv file"
+        file: 
+          dest: /tmp/discovery.csv
+          state:  absent
+        delegate_to:  localhost
+        run_once: yes # we are deleting this file from ansible server so we need this task only once
+      - name: "Creating new discovery.csv file"
+        copy: 
+          dest: /tmp/discovery.csv
+          content:  "Server_name , OS Family , OS Name, OS distribution, uptime\n"
+        delegate_to:  localhost  # delegate_to will create file on mentioned server otherwise it will be created on remote servers
+        run_once: yes # we are generating this file in ansible server so we need header only once
+      - name: "updating info of host in csv file "
+        lineinfile:
+          path: /tmp/discovery.csv
+          line: "{{inventory_hostname}} , {{ansible_os_family}},{{ansible_system}},{{ansible_distribution}}, {{os_name.stdout}}  {{up_time.stdout.split(',')[0].split('up')[1]}}"
+        delegate_to: localhost
