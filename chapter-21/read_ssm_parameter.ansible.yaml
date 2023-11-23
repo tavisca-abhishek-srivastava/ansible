@@ -5,10 +5,21 @@
     become: yes
     tasks:      
       
-      # - name: "install boto core  for ssm parameter lookup"
-      #   yum:
-      #     name: botocore
-      #     state: present
+      - name: Check binaries and versions
+        shell: |
+          echo $PATH
+          export PATH=$PATH:$HOME/.local/bin
+          echo $PATH
+          which python3
+          python3 --version
+          which pip3
+          pip3 --version
+          which ansible
+          ansible --version
+          pip3 list | grep -e ansible -e boto
+          python3 -c 'import botocore'
+          python3 -c 'import boto3'
+
       - name: "install boto3 for ssm parameter lookup"
         ansible.builtin.pip:
           name: boto3
