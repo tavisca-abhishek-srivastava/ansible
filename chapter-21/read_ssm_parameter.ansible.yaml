@@ -5,10 +5,10 @@
     become: yes
     tasks:      
       
-      - name: "install boto core  for ssm parameter lookup"
-        yum:
-          name: botocore
-          state: present
+      # - name: "install boto core  for ssm parameter lookup"
+      #   yum:
+      #     name: botocore
+      #     state: present
       - name: "install boto3 for ssm parameter lookup"
         yum:
           name: boto3
