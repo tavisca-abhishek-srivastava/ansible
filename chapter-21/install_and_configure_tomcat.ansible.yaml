@@ -47,4 +47,9 @@
       - name: "Start tomcat"
         shell:  /usr/local/latest/apache-tomcat-{{req_tomcat_ver}}/bin/startup.sh &
 
+      - name: "Reading SSM parameter value"
+        debug:
+          msg:
+            - " value of parameter PrimaryInstanceName is : {{lookup('aws_ssm','PrimaryInstanceName')}}"
+
       
