@@ -29,7 +29,6 @@
           name: 
             - boto3
             - botocore
-            - ansible
           executable: /usr/bin/pip3
 
       - name: "Reading SSM parameter value"
