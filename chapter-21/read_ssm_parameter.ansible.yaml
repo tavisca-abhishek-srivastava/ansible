@@ -1,3 +1,10 @@
+---
+  - name: "Play for Reading SSM parameter value"
+    hosts:  all
+    gather_facts: false
+    become: yes
+    tasks:      
+      
       - name: "install boto core  for ssm parameter lookup"
         yum:
           name: botocore
