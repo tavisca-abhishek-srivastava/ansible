@@ -12,7 +12,7 @@
       - name: "install boto3 for ssm parameter lookup"
         ansible.builtin.pip:
           name: boto3
-          executable: pip3
+          executable: pip3.7
 
       - name: "Reading SSM parameter value"
         debug:
