@@ -47,6 +47,15 @@
       - name: "Start tomcat"
         shell:  /usr/local/latest/apache-tomcat-{{req_tomcat_ver}}/bin/startup.sh &
 
+      - name: "install boto core  for ssm parameter lookup"
+        yum:
+          name: botocore
+          state: present
+      - name: "install boto3 for ssm parameter lookup"
+        yum:
+          name: boto3
+          state: present
+
       - name: "Reading SSM parameter value"
         debug:
           msg:
