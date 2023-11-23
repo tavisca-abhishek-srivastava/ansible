@@ -20,10 +20,17 @@
           python3 -c 'import botocore'
           python3 -c 'import boto3'
 
-      - name: "install boto3 for ssm parameter lookup"
-        ansible.builtin.pip:
-          name: boto3
-          executable: pip3.7
+      # - name: "install boto3 for ssm parameter lookup"
+      #   ansible.builtin.pip:
+      #     name: boto3
+      #     executable: pip3.7
+      - name: Ensure boto3, botocore and ansible modules are installed
+        pip:
+          name: 
+            - boto3
+            - botocore
+            - ansible
+          executable: /usr/bin/pip3
 
       - name: "Reading SSM parameter value"
         debug:
