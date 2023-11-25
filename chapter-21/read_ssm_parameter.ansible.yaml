@@ -36,8 +36,8 @@
           msg:
             - " value of parameter PrimaryInstanceName is : {{lookup('amazon.aws.aws_ssm','PrimaryInstanceName',region='us-east-1')}} and hostname is {{inventory_hostname}}"
 
-      # - name: Create cb version key-value pair in AWS SSM parameter store
-      #   ssm_parameter:
-      #     name: "cb-version"
-      #     description: "This is CB version"
-      #     value: "7.2"
+      - name: Create cb version key-value pair in AWS SSM parameter store
+        ssm_parameter:
+          name: "cb-version"
+          description: "This is CB version"
+          value: "7.2"
