@@ -5,31 +5,31 @@
     become: yes
     tasks:      
       
-      # - name: Check binaries and versions
-      #   shell: |
-      #     echo $PATH
-      #     export PATH=$PATH:$HOME/.local/bin
-      #     echo $PATH
-      #     which python3
-      #     python3 --version
-      #     which pip3
-      #     pip3 --version
-      #     which ansible
-      #     ansible --version
-      #     pip3 list | grep -e ansible -e boto
-      #     python3 -c 'import botocore'
-      #     python3 -c 'import boto3'
+      - name: Check binaries and versions
+        shell: |
+          echo $PATH
+          export PATH=$PATH:$HOME/.local/bin
+          echo $PATH
+          which python3
+          python3 --version
+          which pip3
+          pip3 --version
+          which ansible
+          ansible --version
+          pip3 list | grep -e ansible -e boto
+          python3 -c 'import botocore'
+          python3 -c 'import boto3'
 
-      # - name: "install boto3 for ssm parameter lookup"
-      #   ansible.builtin.pip:
-      #     name: boto3
-      #     executable: pip3.7
-      # - name: Ensure boto3, botocore and ansible modules are installed
-      #   pip:
-      #     name: 
-      #       - boto3
-      #       - botocore
-      #     executable: /usr/bin/pip3
+      - name: "install boto3 for ssm parameter lookup"
+        ansible.builtin.pip:
+          name: boto3
+          executable: pip3.8
+      - name: Ensure boto3, botocore and ansible modules are installed
+        pip:
+          name: 
+            - boto3
+            - botocore
+          executable: /usr/bin/pip3.8
 
       - name: "Reading SSM parameter value"
         debug:
