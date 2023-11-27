@@ -41,3 +41,4 @@
           name: "cb-version"
           description: "This is CB version"
           value: "7.2"
+          region: 'us-east-1'
