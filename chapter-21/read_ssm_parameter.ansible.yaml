@@ -39,6 +39,6 @@
       - name: Create cb version key-value pair in AWS SSM parameter store
         community.aws.ssm_parameter:
           name: "cb-version"
-          description: "This is CB version"
+          description: "This is CB version-{{inventory_hostname}}"
           value: "7.2"
           region: 'us-east-1'
