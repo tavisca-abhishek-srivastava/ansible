@@ -5,7 +5,7 @@
     gather_facts: false
     tasks:
       - name:  "This task is to install tomcat"
-        yum:  
+        yum3:  
           name: httpd
           state:  present
 
