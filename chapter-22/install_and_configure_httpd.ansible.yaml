@@ -1,0 +1,20 @@
+---
+  - name: "This play is for installing tomcat using Template"
+    hosts:  all
+    become: yes
+    gather_facts: false
+    tasks:
+      - name:  "This task is to install tomcat"
+        yum:  
+          name: httpd
+          state:  present
+
+      - name: "This task will change content of index.html using jinja Template"
+        template: 
+        src: index.html.j2
+        dest: /usr/share/httpd/noindex/index.html
+      - name: httpd service Start
+        service:
+          name: httpd
+          state:  started
+
