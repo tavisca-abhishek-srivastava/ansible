@@ -11,8 +11,8 @@
 
       - name: "This task will change content of index.html using jinja Template"
         template: 
-        src: index.html.j2
-        dest: /usr/share/httpd/noindex/index.html
+          src: index.html.j2
+          dest: /usr/share/httpd/noindex/index.html
       - name: httpd service Start
         service:
           name: httpd
