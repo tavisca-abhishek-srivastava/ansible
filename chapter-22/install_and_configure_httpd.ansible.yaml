@@ -2,10 +2,10 @@
   - name: "This play is for installing tomcat using Template"
     hosts:  all
     become: yes
-    gather_facts: false
+    gather_facts: true
     tasks:
       - name:  "This task is to install tomcat"
-        yum3:  
+        yum:  
           name: httpd
           state:  present
 
