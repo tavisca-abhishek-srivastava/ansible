@@ -1,0 +1,11 @@
+---
+  - name: This play is for copying fie dynamically using template module
+    gather_facts: true
+    hosts:  all
+    vars: 
+      user_name:  "Abhishek Srivastava"
+    tasks:  
+      - name: This task is for copy file
+        template: 
+          src:  myfile.txt.j2
+          dest: /tmp/myfile-content.txt
