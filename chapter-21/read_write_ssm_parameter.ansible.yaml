@@ -5,18 +5,18 @@
     become: yes
     tasks:      
       
-      - name: Check binaries and versions
-        shell: |
-          echo $PATH
-          export PATH=$PATH:$HOME/.local/bin
-          echo $PATH
-          which python3
-          python3 --version
-          which pip3
-          pip3 --version
-          pip3 list | grep -e ansible -e boto
-          python3 -c 'import botocore'
-          python3 -c 'import boto3'
+      # - name: Check binaries and versions
+      #   shell: |
+      #     echo $PATH
+      #     export PATH=$PATH:$HOME/.local/bin
+      #     echo $PATH
+      #     which python3
+      #     python3 --version
+      #     which pip3
+      #     pip3 --version
+      #     pip3 list | grep -e ansible -e boto
+      #     python3 -c 'import botocore'
+      #     python3 -c 'import boto3'
 
       - name: "install boto3 for ssm parameter lookup"
         ansible.builtin.pip:
