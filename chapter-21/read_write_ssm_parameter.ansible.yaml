@@ -14,8 +14,6 @@
           python3 --version
           which pip3
           pip3 --version
-          which ansible
-          ansible --version
           pip3 list | grep -e ansible -e boto
           python3 -c 'import botocore'
           python3 -c 'import boto3'
