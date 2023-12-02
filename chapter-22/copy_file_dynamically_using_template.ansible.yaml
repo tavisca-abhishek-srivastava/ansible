@@ -3,9 +3,11 @@
     gather_facts: true
     hosts:  all
     vars: 
-      user_name:  "Abhishek Srivastava"
+      user_name1:  "Abhishek Srivastava"
+      user_name2:  "Akhilesh Srivastava"
+
       x: 22
-      y: 20
+      y: 29
     tasks:  
       - name: This task is for copy file
         template: 
