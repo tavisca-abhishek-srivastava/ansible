@@ -5,9 +5,9 @@
     vars: 
       user_name1:  "Abhishek Srivastava"
       user_name2:  "Akhilesh Srivastava"
-
       x: 22
       y: 29
+      z: [1,2,3,4,5,6]
     tasks:  
       - name: This task is for copy file
         template: 
