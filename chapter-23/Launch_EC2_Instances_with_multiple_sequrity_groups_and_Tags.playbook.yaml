@@ -1,0 +1,25 @@
+---
+  - name: "This Play is to Launch EC2 Instances with multiple sequrity groups and Tags"
+    gather_facts: false
+    hosts:  localhost
+    connection: local
+    tasks:
+      - name: This task is to create EC2
+        ec2:
+          instance_type: t1.micro
+          image:  ami-08d01bf321ad0777e
+          count:  1
+          key_name: tf-testing
+          region: us-east-1
+          wait: yes
+          group_id: sg-00054d902c8e915a0
+          vpc_subnet_id:  subnet-04c8a1cce0a80f526
+          instance_tags:
+            DataClassification: restricted
+            Environment: poc
+            AppName:  as-testing-client-1
+            InfraOwner: sre-cloud-reliability@tavisca.com
+            BusinessUnit: travel.app
+            Backup: 'no'
+            Product: poap
+            Name: as-testing-client-1  
