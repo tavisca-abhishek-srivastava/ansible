@@ -6,7 +6,7 @@
     tasks:
       - name: This task is to create EC2
         amazon.aws.ec2_instance:
-          instance_type: t1.micro
+          instance_type: t2.small
           image_id:  ami-08d01bf321ad0777e
           count:  1
           key_name: tf-testing
