@@ -4,25 +4,11 @@
     gather_facts: false
     become: yes
     tasks:      
-      
-      # - name: Check binaries and versions
-      #   shell: |
-      #     echo $PATH
-      #     export PATH=$PATH:$HOME/.local/bin
-      #     echo $PATH
-      #     which python3
-      #     python3 --version
-      #     which pip3
-      #     pip3 --version
-      #     pip3 list | grep -e ansible -e boto
-      #     python3 -c 'import botocore'
-      #     python3 -c 'import boto3'
-
       - name: "install boto3 for ssm parameter lookup"
         ansible.builtin.pip:
           name: boto3
           executable: pip3.8
-      - name: Ensure boto3, botocore and ansible modules are installed
+      - name: Ensure boto3 and botocore modules are installed
         pip:
           name: 
             - boto3
@@ -40,3 +26,18 @@
           description: "This is CB version"
           value: "7.2"
           region: 'us-east-1'
+      
+      - name: Check binaries and versions
+        shell: |
+          echo $PATH
+          export PATH=$PATH:$HOME/.local/bin
+          echo $PATH
+          which python3
+          python3 --version
+          which pip3
+          pip3 --version
+          which ansible
+          ansible --version
+          pip3 list | grep -e ansible -e boto
+          python3 -c 'import botocore'
+          python3 -c 'import boto3'
