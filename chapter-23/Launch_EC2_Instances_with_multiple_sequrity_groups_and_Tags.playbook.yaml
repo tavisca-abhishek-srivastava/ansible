@@ -27,4 +27,5 @@
             Name: as-testing-client-1  
       - name: Printing Instance IP
         debug:
-          msg:  IP address of instance is {{output.instances.network_interfaces.private_ip_addresses}}
+          msg:
+            - "Address of instance is {{output.instances.network_interfaces.private_ip_addresses}}"
