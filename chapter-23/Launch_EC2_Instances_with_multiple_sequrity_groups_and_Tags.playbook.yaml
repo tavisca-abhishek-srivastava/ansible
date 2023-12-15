@@ -15,7 +15,6 @@
           security_group: sg-00054d902c8e915a0
           vpc_subnet_id:  subnet-04c8a1cce0a80f526
           iam_instance_profile: tf-role-testing 
-          register: output
           tags:
             DataClassification: restricted
             Environment: poc
@@ -24,7 +23,8 @@
             BusinessUnit: travel.app
             Backup: 'no'
             Product: poap
-            Name: as-testing-client-1  
+            Name: as-testing-client-1
+        register: output
       - name: Printing Instance IP
         debug:
           msg:
