@@ -28,4 +28,4 @@
       - name: Printing Instance IP
         debug:
           msg:
-            - "Address of instance is {{output.instances}}"
+            - "Address of instance is {{output.instances['private_ip_address']}}"
