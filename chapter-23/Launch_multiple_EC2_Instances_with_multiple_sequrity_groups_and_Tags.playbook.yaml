@@ -32,6 +32,6 @@
       - name: Printing Instance IP
         debug:
           msg:
-            - "Address of instance is {{(output.instances[0])['private_ip_address']}}"
-            - "Address of instance is {{(output.instances[1])['private_ip_address']}}"
-            - "Address of instance is {{(output.instances[2])['private_ip_address']}}"
+            #- "Address of instance is {{(output.instances[0])['private_ip_address']}}"
+            - "Address of instance is {output.instances}"
+            # - "Address of instance is {{(output.instances[2])['private_ip_address']}}"
