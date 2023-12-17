@@ -5,7 +5,7 @@
     connection: local
     tasks:
       - name: this task is to collect ec2 instance info based upon EC2 tags
-        amazon.aws.ec2_instance_facts:
+        amazon.aws.ec2_metadata_facts:
           region: us-east-1
           filters:
             "tag:Environment": poc
