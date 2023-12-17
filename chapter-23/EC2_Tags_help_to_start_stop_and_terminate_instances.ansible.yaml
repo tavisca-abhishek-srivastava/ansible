@@ -5,17 +5,9 @@
     connection: local
     tasks:
       - name: this task is to collect ec2 instance info based upon EC2 tags
-        amazon.aws.ec2_metadata_facts:
-
-        # register: ec2_instances_info
-      
-      - name: print ec2 details
-        debug:
-          msg: 
-            - "This instance is a t1.micro"
-            - "{{ansible_ec2_instance_id}}"
-            
-        when: ansible_ec2_instance_type == "t2.small"
-
+        amazon.aws.ec2_instance_info:
+          regions:
+            - us-east-1
+          filters:"tag:Environment": qa
 
     
