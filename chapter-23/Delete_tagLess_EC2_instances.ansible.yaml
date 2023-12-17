@@ -1,0 +1,31 @@
+---
+  - name: this play is for start/stop/terminate instances based upon tags
+    gather_facts: false
+    hosts:  localhost
+    connection: local
+    tasks:
+      - name: this task is to collect ec2 instance info based upon EC2 tags
+        amazon.aws.ec2_instance_info:
+          filters:
+            "tag:Name": "as-testing-client*"
+          region: us-east-1
+        register: ec2_node_info
+      
+      - name: print info
+        debug:
+          msg:
+            - "{{item['private_ip_address']}}"
+        loop: "{{(ec2_node_info)['instances']}}"   # https://www.freekb.net/Article?id=586 ansible looping
+        loop_control:   #supress log using https://www.freekb.net/Article?id=2989 loop control   
+          label: "{{ item['instance_id'] }}"
+
+      - name: Delete tag less EC2 instances
+        amazon.aws.ec2_instance:
+          region: us-east-1
+          state: started
+          instance_ids: "{{item['instance_id']}}"
+          wait: false
+        loop: "{{(ec2_node_info)['instances']}}"
+        when: item.tags.keys()|length == 0
+
+    
