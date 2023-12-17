@@ -6,7 +6,8 @@
     tasks:
       - name: this task is to collect ec2 instance info based upon EC2 tags
         amazon.aws.ec2_instance_info:
-          filters:"tag:Environment": "qa"
+          filters:
+            "tag:Name": Environment
           # region: us-east-1
           
         register: ec2_node_info
