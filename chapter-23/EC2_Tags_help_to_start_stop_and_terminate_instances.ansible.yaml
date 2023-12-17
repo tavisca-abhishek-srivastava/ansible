@@ -13,7 +13,7 @@
         debug:
           msg: 
             - "This instance is a t1.micro"
-            - hostvars[ansible_ec2_instance_id]
+            - ansible_ec2_instance_id
         when: ansible_ec2_instance_type == "t2.small"
 
 
