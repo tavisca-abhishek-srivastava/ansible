@@ -9,11 +9,14 @@
           region: us-east-1
           filters:
             "tag:Environment": poc
-        register: ec2_instances_info
+        # register: ec2_instances_info
       
       - name: print ec2 details
         debug:
           msg:
-            - "{{ec2_instances_info}}"
+            - "these instance are using iam_role_profile"
+        when: ansible_ec2_profile == "tf-role-testing"
+
+
 
     
