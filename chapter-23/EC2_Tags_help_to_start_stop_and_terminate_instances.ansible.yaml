@@ -1,7 +1,7 @@
 ---
   - name: this play is for start/stop/terminate instances based upon tags
     gather_facts: false
-    hosts:  localhost
+    hosts:  local
     connection: local
     tasks:
       - name: this task is to collect ec2 instance info based upon EC2 tags
@@ -11,5 +11,8 @@
           region: us-east-1
           
         register: ec2_node_info
-
+      - name: print info
+        debug:
+          msg:
+            - "ec2_node_info"
     
