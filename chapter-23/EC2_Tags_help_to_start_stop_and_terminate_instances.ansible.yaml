@@ -14,5 +14,5 @@
       - name: print info
         debug:
           msg:
-            - "{{ec2_node_info}}"
+            - "{{(ec2_node_info)['instances']}}"
     
