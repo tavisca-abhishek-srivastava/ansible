@@ -1,6 +1,6 @@
 ---
   - name: this play is for start/stop/terminate instances based upon tags
-    gather_facts: false
+    gather_facts: true
     hosts:  localhost
     connection: local
     tasks:
@@ -11,9 +11,8 @@
       
       - name: print ec2 details
         debug:
-          msg:
-            - "these instance are using iam_role_profile"
-        when: ansible_ec2_profile == "tf-role-testing"
+          msg: "This instance is a t1.micro"
+        when: ansible_ec2_instance_type == "t1.micro"
 
 
 
