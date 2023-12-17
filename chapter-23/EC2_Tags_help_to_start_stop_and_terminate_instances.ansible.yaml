@@ -13,7 +13,8 @@
         debug:
           msg: 
             - "This instance is a t1.micro"
-            - ansible_ec2_instance_id
+            - "{{hostvars[ansible_ec2_instance_id]}}"
+            - "Service hostname is: '{{ hostvars[inventory_hostname].tags.Name }}.{{ delegated_dns_domain }}'"
         when: ansible_ec2_instance_type == "t2.small"
 
 
