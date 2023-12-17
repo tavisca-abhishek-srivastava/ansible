@@ -14,7 +14,7 @@
       - name: print info
         debug:
           msg:
-            - "{{item.private_ip_address}}"
+            - "{{item['private_ip_address']}}"
             # - "{{((ec2_node_info)['instances'])[1].private_ip_address}}"
             # - "{{((ec2_node_info)['instances'])[2].private_ip_address}}"
             # - "{{((ec2_node_info)['instances'])[3].private_ip_address}}"
@@ -22,6 +22,9 @@
             # - "{{((ec2_node_info)['instances'])[5].private_ip_address}}"
             # - "{{((ec2_node_info)['instances'])[6].private_ip_address}}"
             # - "{{((ec2_node_info)['instances'])[7].private_ip_address}}"
-        loop: "{{(ec2_node_info)['instances']}}"
+        loop: "{{(ec2_node_info)['instances']}}"   # https://www.freekb.net/Article?id=586 ansible looping
+        loop_control:   #supress log using https://www.freekb.net/Article?id=2989 loop control   
+          label: "{{ item['private_ip_address'] }}"
+
 
     
