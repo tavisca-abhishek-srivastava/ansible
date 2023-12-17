@@ -14,12 +14,14 @@
       - name: print info
         debug:
           msg:
-            - "{{((ec2_node_info)['instances'])[0].private_ip_address}}"
-            - "{{((ec2_node_info)['instances'])[1].private_ip_address}}"
-            - "{{((ec2_node_info)['instances'])[2].private_ip_address}}"
-            - "{{((ec2_node_info)['instances'])[3].private_ip_address}}"
-            - "{{((ec2_node_info)['instances'])[4].private_ip_address}}"
-            - "{{((ec2_node_info)['instances'])[5].private_ip_address}}"
-            - "{{((ec2_node_info)['instances'])[6].private_ip_address}}"
-            - "{{((ec2_node_info)['instances'])[7].private_ip_address}}"
+            - "{{item.private_ip_address}}"
+            # - "{{((ec2_node_info)['instances'])[1].private_ip_address}}"
+            # - "{{((ec2_node_info)['instances'])[2].private_ip_address}}"
+            # - "{{((ec2_node_info)['instances'])[3].private_ip_address}}"
+            # - "{{((ec2_node_info)['instances'])[4].private_ip_address}}"
+            # - "{{((ec2_node_info)['instances'])[5].private_ip_address}}"
+            # - "{{((ec2_node_info)['instances'])[6].private_ip_address}}"
+            # - "{{((ec2_node_info)['instances'])[7].private_ip_address}}"
+        loop: "{{(ec2_node_info)['instances']}}"
+
     
