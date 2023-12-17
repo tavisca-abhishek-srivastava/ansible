@@ -24,6 +24,7 @@
           region: us-east-1
           state: restarted
           instance_ids: "{{item['instance_id']}}"
+          wait: false
         loop: "{{(ec2_node_info)['instances']}}" 
 
     
